@@ -33,6 +33,7 @@ const Home = ({ setBase64Image }) => {
 
     setDropAreaVisible(false);
     convertToBase64(file);
+    navigate("/upload");
   };
 
   const convertToBase64 = (file) => {
@@ -46,7 +47,7 @@ const Home = ({ setBase64Image }) => {
   };
 
   const handleRemoveBackground = () => {
-    navigate("/remove");
+    // navigate("/upload");
   };
 
   return (
@@ -200,68 +201,6 @@ const Home = ({ setBase64Image }) => {
                   </div>
                 )}
               </div>
-
-              {/* <div className="header__drop--area-wrapper">
-                {isDropAreaVisible && (
-                  <div
-                    id="drop-area"
-                    onDragEnter={preventDefaults}
-                    onDragOver={(e) => {
-                      preventDefaults(e);
-                      handleDragEnter();
-                    }}
-                    onDragLeave={(e) => {
-                      preventDefaults(e);
-                      handleDragLeave();
-                    }}
-                    onDrop={handleDrop}
-                    onClick={handleClick}
-                  >
-                    <p>Click or drag and drop your image here</p>
-                    <div className="instructions">
-                      Supports JPG, PNG - Max file size: 5MB
-                    </div>
-                    <input
-                      type="file"
-                      id="fileInput"
-                      accept="image/*"
-                      ref={fileInputRef}
-                      style={{ display: "none" }}
-                      onChange={(e) => handleFiles(e.target.files[0])}
-                    />
-                  </div>
-                )}
-
-                <div className="header__img--area-wrapper">
-                  <div id="image-container">
-                    {originalImage && !processedImage && (
-                      <img
-                        src={originalImage}
-                        alt="Original"
-                        style={{ opacity: 0.4, maxWidth: "100%" }}
-                      />
-                    )}
-                    {processedImage && (
-                      <img
-                        src={processedImage}
-                        alt="Processed"
-                        style={{ maxWidth: "100%" }}
-                      />
-                    )}
-                  </div>
-                  {loading && (
-                    <div id="loading-spinner" className="spinner__wrapper">
-                      <i className="fas fa-solid fa-spinner"></i>
-                    </div>
-                  )}
-                </div>
-
-                {processedImage && (
-                  <button onClick={reset} style={{ display: "block" }}>
-                    Reset
-                  </button>
-                )}
-              </div> */}
             </div>
           </div>
           <svg
